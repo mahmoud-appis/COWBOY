@@ -1,6 +1,6 @@
 // Banner Slider
 let currentSlide = 0;
-const slides = document.querySelectorAll('.banner-slide');
+const slides = document.querySelectorAll('.sub-banner-slide');
 if (slides.length > 0) {
     setInterval(() => {
         slides[currentSlide].classList.remove('active');
@@ -39,16 +39,16 @@ async function loadSettings() {
         const settings = await response.json();
         document.querySelectorAll('.phone-number').forEach(el => el.textContent = settings.phone);
         document.querySelectorAll('#logo-image').forEach(el => el.src = settings.logo);
-        const banner = document.querySelector('.banner');
-        if (banner) {
-            banner.innerHTML = '';
+        const subBanner = document.querySelector('.sub-banner');
+        if (subBanner) {
+            subBanner.innerHTML = '';
             settings.banner_images.forEach(img => {
                 const slide = document.createElement('div');
-                slide.className = 'banner-slide';
+                slide.className = 'sub-banner-slide';
                 slide.innerHTML = `<img src="${img}" alt="Banner">`;
-                banner.appendChild(slide);
+                subBanner.appendChild(slide);
             });
-            const slides = document.querySelectorAll('.banner-slide');
+            const slides = document.querySelectorAll('.sub-banner-slide');
             if (slides.length > 0) {
                 slides[0].classList.add('active');
             }
@@ -425,3 +425,4 @@ window.addEventListener('load', () => {
         navUl.classList.add('show');
     }
 });
+
