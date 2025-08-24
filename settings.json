@@ -1,0 +1,9 @@
+{
+    "phone": "0123456789",
+    "banner_images": [
+        "banner1.jpg",
+        "banner2.jpg",
+        "banner3.jpg"
+    ],
+    "logo": "new-logo.png"
+}
