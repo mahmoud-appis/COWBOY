@@ -36,18 +36,20 @@ body {
 header {
     background-color: rgba(47, 168, 224, 0.3);
     color: white;
-    padding: 8px 15px; /* تصغير المسافة الداخلية */
+    padding: 8px 15px; /* تقليل المسافة الداخلية */
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 100vw; /* يمنع تجاوز العرض */
+    overflow-x: hidden; /* يمنع تمرير أفقي */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     backdrop-filter: blur(8px);
-}}
+}
 
 
 
@@ -123,11 +125,12 @@ nav ul li a:hover {
 }
 
 .banner {
-    height: 200px;
+    height: 400px; /* ارتفاع أكبر */
     overflow: hidden;
     position: relative;
     background-color: #eee;
 }
+
 
 .banner-slide {
     width: 100%;
