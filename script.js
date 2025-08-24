@@ -436,11 +436,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
+   
+document.addEventListener("DOMContentLoaded", function () {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.banner img');
 
-    showSlide(currentSlide);
-    setInterval(nextSlide, 2000); // كل 2 ثانية
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 2000); // تغيير الصورة كل ثانيتين
 });
+
