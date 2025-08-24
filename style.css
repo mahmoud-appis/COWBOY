@@ -33,22 +33,21 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
 header {
-    background-color: rgba(47, 168, 224, 0.3); /* شفافية عالية */
+    background-color: rgba(47, 168, 224, 0.3);
     color: white;
-    padding: 15px 20px;
+    padding: 8px 15px; /* تصغير المسافة الداخلية */
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    position: fixed; /* يجعل البار فوق */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    backdrop-filter: blur(8px); /* تأثير زجاجي */
-}
+    backdrop-filter: blur(8px);
+}}
 
 
 
@@ -63,8 +62,7 @@ header {
 }
 
 .logo h1 {
-    margin: 0;
-    font-size: 24px;
+    font-size: 18px; /* تصغير حجم النص */
 }
 
 nav ul {
@@ -82,7 +80,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     transition: color 0.3s;
 }
 
