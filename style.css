@@ -35,7 +35,7 @@ body {
 }
 
 header {
-    background-color: #2FA8E0;
+    background-color: rgba(47, 168, 224, 0.8); /* اللون مع شفافية */
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -44,7 +44,9 @@ header {
     width: 100%;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    backdrop-filter: blur(6px); /* لإضافة ضبابية خلفية */
 }
+
 
 .logo {
     display: flex;
