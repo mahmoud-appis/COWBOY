@@ -33,25 +33,18 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
 header {
-    background-color: rgba(47, 168, 224, 0.3);
+    background-color: #2FA8E0;
     color: white;
-    padding: 8px 15px; /* تقليل المسافة الداخلية */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 100vw; /* يمنع تجاوز العرض */
-    overflow-x: hidden; /* يمنع تمرير أفقي */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    z-index: 100;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    backdrop-filter: blur(8px);
 }
-
-
 
 .logo {
     display: flex;
@@ -60,11 +53,12 @@ header {
 
 .logo img {
     height: 40px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .logo h1 {
-    font-size: 18px; /* تصغير حجم النص */
+    margin: 0;
+    font-size: 24px;
 }
 
 nav ul {
@@ -82,7 +76,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
@@ -124,15 +118,15 @@ nav ul li a:hover {
     }
 }
 
-.banner {
-    height: 400px; /* ارتفاع أكبر */
+.sub-banner {
+    height: 200px;
     overflow: hidden;
     position: relative;
     background-color: #eee;
+    margin-top: 20px;
 }
 
-
-.banner-slide {
+.sub-banner-slide {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -140,17 +134,15 @@ nav ul li a:hover {
     transition: opacity 0.5s ease-in-out;
 }
 
-.banner-slide.active {
+.sub-banner-slide.active {
     opacity: 1;
 }
 
-.banner-slide img {
+.sub-banner-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
-
 
 .filter-section {
     padding: 20px;
@@ -549,6 +541,10 @@ footer {
     .product-info button {
         font-size: 14px;
         padding: 10px 20px;
+    }
+
+    .sub-banner {
+        height: 150px;
     }
 }
 
