@@ -5,6 +5,23 @@ body {
     direction: rtl;
     background-color: #f9f9f9;
     color: #333;
+    background-image: url('https://i.postimg.cc/DwVZN3ks/Screenshot-2025-08-24-141053.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* 50% transparent white overlay */
+    z-index: -1;
 }
 
 .loading-screen {
@@ -13,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #fff; /* Opaque white to hide background during loading */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -404,153 +421,20 @@ nav ul li a:hover {
 .contact {
     padding: 20px;
     margin-top: 20px;
-    text-align: center;
-}
+    text-align: center    	    
 
-.social-icons img {
-    height: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s;
-}
 
-.social-icons img:hover {
-    transform: scale(1.1);
-}
+### How to Use:
+- **Download the File**: Save the modified `style.css` file from the `<xaiArtifact>` block above.
+- **Place the File**: Replace the existing `style.css` in your project directory with this updated version.
+- **No Image File Needed**: Since the background image is hosted online (`https://i.postimg.cc/DwVZN3ks/Screenshot-2025-08-24-141053.png`), you don’t need to download it.
+- **Test**: Host the project on a web server or use a local server (e.g., Live Server in VS Code). Verify that the background image appears across all pages with a semi-transparent white overlay (50% opacity).
+- **Check Responsiveness**: The `background-size: cover` ensures the image scales proportionally to fit the viewport on all devices. The `background-attachment: fixed` keeps it fixed during scrolling for a smooth effect.
 
-footer {
-    background-color: #2FA8E0;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-}
+### Notes:
+- **Transparency**: The `body::before` pseudo-element applies a 50% transparent white overlay (`rgba(255, 255, 255, 0.5)`). If you want more or less transparency, adjust the opacity value (e.g., `0.3` for more transparency, `0.7` for less).
+- **Background Behavior**: The `background-attachment: fixed` makes the background stay in place while scrolling. If you prefer it to scroll with the content, change it to `background-attachment: scroll`.
+- **Readability**: The semi-transparent overlay ensures that content (e.g., text, product cards, navbar) remains readable against the background. If the content is still hard to read, you can increase the opacity of the overlay (e.g., `rgba(255, 255, 255, 0.7)`) or use a darker color (e.g., `rgba(0, 0, 0, 0.3)` for a dark overlay).
+- **No Other Changes Needed**: The HTML files (`index.html`, etc.), `script.js`, and `settings.json` remain unchanged, as the background is a CSS modification.
 
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.footer-logo img {
-    height: 40px;
-}
-
-.footer-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-content ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-content ul li a:hover {
-    color: #f0f0f0;
-}
-
-.offers {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-.offers h2 {
-    text-align: center;
-    color: #ff5733;
-    margin-bottom: 20px;
-}
-
-.offers .product-card {
-    border: 2px dashed #ff5733;
-}
-
-.floating-cart {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #2FA8E0;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    text-decoration: none;
-    z-index: 1000;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.floating-cart:hover {
-    background-color: #1a7bb9;
-    transform: scale(1.1);
-}
-
-.floating-cart span {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.logo {
-    animation: pulse 2s infinite;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    .products-grid, #offers-container, #favorites-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    header {
-        padding: 10px;
-    }
-
-    .logo h1 {
-        font-size: 20px;
-    }
-
-    .product-details img {
-        max-height: 300px;
-    }
-
-    .options label {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-
-    .product-info button {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .sub-banner {
-        height: 150px;
-    }
-}
-
-@media (min-width: 769px) {
-    .product-info button {
-        width: auto;
-        display: inline-block;
-    }
-}
+If you want a different transparency level, a local image file instead of the URL, or additional styling tweaks (e.g., different overlay color, scrollable background), please provide details, and I can adjust the CSS accordingly. Let me know if you need further assistance!
